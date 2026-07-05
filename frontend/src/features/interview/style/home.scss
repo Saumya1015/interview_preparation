@@ -1,0 +1,504 @@
+// ─── Variables ───────────────────────────────────────────────────────────────
+$purple-primary:    #7c3aed;
+$purple-mid:        #8b5cf6;
+$purple-light:      #ede9fe;
+$purple-lighter:    #f5f3ff;
+$purple-border:     #ddd6fe;
+$purple-text:       #6d28d9;
+
+$indigo-text:       #4f46e5;
+$indigo-bg:         #eef2ff;
+$indigo-border:     #c7d2fe;
+
+$red-text:          #dc2626;
+$red-bg:            #fef2f2;
+$red-border:        #fecaca;
+
+$green-text:        #059669;
+$green-bg:          #ecfdf5;
+$green-border:      #a7f3d0;
+
+$amber-text:        #d97706;
+$score-low:         #dc2626;
+
+$page-bg:           #f8f7ff;
+$surface-white:     #ffffff;
+$surface-soft:      #faf9ff;
+$border-light:      #e8e4f8;
+$border-default:    #ddd6fe;
+$border-input:      #e2e0ed;
+
+$text-heading:      #1e1b4b;
+$text-primary:      #2d2a5e;
+$text-secondary:    #4c4887;
+$text-muted:        #7c7aaa;
+$text-placeholder:  #a5a3c2;
+$text-ghost:        #b8b6d4;
+
+$font-base: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+// ─── Base ─────────────────────────────────────────────────────────────────────
+.home-page {
+    min-height: 100vh;
+    background: $page-bg;
+    font-family: $font-base;
+    margin: 0;
+    padding: 0;
+}
+
+// ─── Page Header ──────────────────────────────────────────────────────────────
+.page-header {
+    text-align: center;
+    padding: 64px 24px 40px;
+
+    .header-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: $purple-light;
+        border: 1px solid $purple-border;
+        border-radius: 100px;
+        padding: 6px 14px;
+        font-size: 11px;
+        font-weight: 600;
+        color: $purple-text;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+    }
+
+    h1 {
+        font-size: clamp(28px, 5vw, 46px);
+        font-weight: 700;
+        color: $text-heading;
+        margin: 0 0 14px;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+
+        .highlight {
+            background: linear-gradient(135deg, $purple-primary 0%, #4f46e5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    }
+
+    p {
+        font-size: 16px;
+        color: $text-muted;
+        max-width: 460px;
+        margin: 0 auto;
+        line-height: 1.65;
+    }
+}
+
+// ─── Interview Card ───────────────────────────────────────────────────────────
+.interview-card {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px 32px;
+
+    &__inner {
+        background: $surface-white;
+        border: 1px solid $border-light;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 24px rgba(124, 58, 237, 0.07), 0 1px 4px rgba(124, 58, 237, 0.04);
+    }
+
+    &__body {
+        display: grid;
+        grid-template-columns: 1fr 1px 1fr;
+        min-height: 400px;
+    }
+
+    &__footer {
+        border-top: 1px solid $border-light;
+        padding: 14px 28px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: $surface-soft;
+    }
+}
+
+// ─── Panel Divider ────────────────────────────────────────────────────────────
+.panel-divider {
+    background: $border-light;
+    margin: 20px 0;
+}
+
+// ─── Panel ────────────────────────────────────────────────────────────────────
+.panel {
+    padding: 28px 30px;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 14px;
+    }
+
+    &__icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        background: $purple-light;
+        border: 1px solid $purple-border;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $purple-primary;
+        flex-shrink: 0;
+    }
+
+    h2 {
+        font-size: 14px;
+        font-weight: 600;
+        color: $text-primary;
+        margin: 0;
+        flex: 1;
+    }
+
+    &__textarea {
+        width: 100%;
+        background: $surface-soft;
+        border: 1.5px solid $border-input;
+        border-radius: 10px;
+        padding: 13px 15px;
+        font-size: 13.5px;
+        color: $text-primary;
+        resize: none;
+        outline: none;
+        font-family: $font-base;
+        line-height: 1.65;
+        height: 190px;
+        box-sizing: border-box;
+        transition: border-color 0.2s, box-shadow 0.2s;
+
+        &::placeholder {
+            color: $text-placeholder;
+        }
+
+        &:focus {
+            border-color: $purple-mid;
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.12);
+            background: $surface-white;
+        }
+
+        &--short {
+            height: 95px;
+        }
+    }
+}
+
+// ─── Char Counter ─────────────────────────────────────────────────────────────
+.char-counter {
+    font-size: 11px;
+    color: $text-ghost;
+    text-align: right;
+    margin-top: 6px;
+}
+
+// ─── Badges ───────────────────────────────────────────────────────────────────
+.badge {
+    font-size: 10px;
+    font-weight: 600;
+    border-radius: 4px;
+    padding: 2px 7px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+    &--required {
+        color: $red-text;
+        background: $red-bg;
+        border: 1px solid $red-border;
+    }
+
+    &--best {
+        color: $green-text;
+        background: $green-bg;
+        border: 1px solid $green-border;
+    }
+}
+
+// ─── Section Label ────────────────────────────────────────────────────────────
+.section-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    color: $text-muted;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 9px;
+}
+
+// ─── Upload / Dropzone ────────────────────────────────────────────────────────
+.upload-section {
+    margin-bottom: 0;
+}
+
+.dropzone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    background: $purple-lighter;
+    border: 1.5px dashed $purple-border;
+    border-radius: 10px;
+    padding: 22px 14px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+
+    &:hover {
+        border-color: $purple-mid;
+        background: $purple-light;
+    }
+
+    &__icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        background: $purple-light;
+        border: 1px solid $purple-border;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $purple-primary;
+    }
+
+    &__title {
+        font-size: 13px;
+        font-weight: 500;
+        color: $text-secondary;
+        margin: 0;
+    }
+
+    &__subtitle {
+        font-size: 11px;
+        color: $text-muted;
+        margin: 0;
+    }
+}
+
+// ─── OR Divider ───────────────────────────────────────────────────────────────
+.or-divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 14px 0;
+
+    &__line {
+        flex: 1;
+        height: 1px;
+        background: $border-light;
+    }
+
+    &__text {
+        font-size: 10px;
+        font-weight: 600;
+        color: $text-ghost;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+}
+
+// ─── Self Description ─────────────────────────────────────────────────────────
+.self-description {
+    margin-bottom: 0;
+}
+
+// ─── Info Box ─────────────────────────────────────────────────────────────────
+.info-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    background: $indigo-bg;
+    border: 1px solid $indigo-border;
+    border-radius: 8px;
+    padding: 10px 13px;
+    margin-top: 12px;
+
+    &__icon {
+        color: $indigo-text;
+        flex-shrink: 0;
+        margin-top: 1px;
+
+        circle {
+            fill: $indigo-text;
+        }
+    }
+
+    p {
+        font-size: 12px;
+        color: $text-secondary;
+        line-height: 1.55;
+        margin: 0;
+
+        strong {
+            color: $indigo-text;
+        }
+    }
+}
+
+// ─── Card Footer ──────────────────────────────────────────────────────────────
+.footer-info {
+    font-size: 12px;
+    color: $text-muted;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    svg {
+        stroke: $text-muted;
+    }
+}
+
+.generate-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, $purple-primary 0%, #4f46e5 100%);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 22px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    letter-spacing: -0.01em;
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);
+    transition: opacity 0.2s, transform 0.1s, box-shadow 0.2s;
+
+    &:hover {
+        opacity: 0.92;
+        box-shadow: 0 6px 20px rgba(124, 58, 237, 0.38);
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+}
+
+// ─── Recent Reports ───────────────────────────────────────────────────────────
+.recent-reports {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px 52px;
+
+    h2 {
+        font-size: 15px;
+        font-weight: 600;
+        color: $text-secondary;
+        margin-bottom: 14px;
+        letter-spacing: -0.01em;
+    }
+}
+
+.reports-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 10px;
+}
+
+.report-item {
+    background: $surface-white;
+    border: 1px solid $border-light;
+    border-radius: 12px;
+    padding: 16px 20px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+
+    &:hover {
+        border-color: $purple-border;
+        box-shadow: 0 2px 12px rgba(124, 58, 237, 0.08);
+    }
+
+    h3 {
+        font-size: 15px;
+        font-weight: 600;
+        color: $text-primary;
+        margin: 0 0 4px;
+    }
+}
+
+.report-meta {
+    font-size: 12px;
+    color: $text-muted;
+    margin: 0 0 8px;
+}
+
+.match-score {
+    font-size: 12px;
+    font-weight: 600;
+
+    &.score--high { color: $green-text; }
+    &.score--mid  { color: $amber-text; }
+    &.score--low  { color: $score-low;  }
+}
+
+// ─── Page Footer ──────────────────────────────────────────────────────────────
+.page-footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid $border-light;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+
+    a {
+        font-size: 12px;
+        color: $text-ghost;
+        text-decoration: none;
+        transition: color 0.2s;
+
+        &:hover {
+            color: $text-muted;
+        }
+    }
+}
+
+// ─── Loading Screen ───────────────────────────────────────────────────────────
+.loading-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $page-bg;
+
+    h1 {
+        font-size: 20px;
+        font-weight: 500;
+        color: $text-muted;
+        font-family: $font-base;
+    }
+}
+
+// ─── Responsive ───────────────────────────────────────────────────────────────
+@media (max-width: 680px) {
+    .interview-card__body {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1px auto;
+    }
+
+    .panel-divider {
+        margin: 0 20px;
+    }
+
+    .interview-card__footer {
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .generate-btn {
+        justify-content: center;
+    }
+}
