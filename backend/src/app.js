@@ -11,7 +11,7 @@ const app = express()
 app.use(express.json()) // req.body ma data read
 app.use(cookieParser())
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "https://interview-preparation-frontendd.onrender.com",
     credentials: true
 }))
 
