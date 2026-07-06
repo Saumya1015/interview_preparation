@@ -6,7 +6,7 @@ import axios from "axios"
 
 // instance create for basic code (repeated code)
 const api = axios.create({
-    baseURL: "http://localhost:3000",
+        baseURL: import.meta.env.VITE_API_URL || "http://localhost:3000",
     withCredentials: true // server ke pass acess rehta hai cokkies ke data read kr sake  or set
 })
 
